@@ -1,2 +1,2 @@
 # socketchat
-network communication server/client using TCP/IP and IPv4 protocol
+servidor / cliente de comunicação em rede usando protocolo TCP/IP e IPv4
