@@ -28,7 +28,7 @@ def cliente(conn,addr):
             
         elif mss.decode('utf-8').strip() == '!M-mssglobal':
             print('mais um falando no global')
-            while (mss := conn.recv(1024)).decode('utf-8').strip() != 'leave':                    
+            while (mss := conn.recv(1024)).decode('utf-8').strip() != '/leave':                    
                 for i in usuarios:
                     try:
                         i[1].send((str(getsizeof(f'\n[{addr}]'.encode('utf-8')+mss))+(' '*(1024-len(str(getsizeof(f'\n[{i[0]}] '.encode('utf-8')+mss)))))).encode('utf-8'))

@@ -84,8 +84,8 @@ def main(stdscr):
             s.send('!M-mssglobal'.encode('utf-8'))
             while True:
                 boxmss.edit()
-                if (mss:=boxmss.gather().strip()) == 'leave':break
-                s.send((nick+mss).encode('utf-8'))
+                if (mss:=boxmss.gather().strip()) == '/leave':break
+                if len(mss.strip()) > 0:s.send((nick+mss).encode('utf-8'))
                 sleep(0.1)
             s.send(mss.encode('utf-8'))
  
